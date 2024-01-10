@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>marksheet | js</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: url(https://img.freepik.com/free-vector/gradient-glassmorphism-background_23-2149447861.jpg?w=900&t=st=1702301840~exp=1702302440~hmac=737d89854c7109a060f7f95dcce7d404b6b3ee3113365cbe1f6cc689d7cb7854);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .main{
+            backdrop-filter: blur(5px);
+            width: 50%;
+            margin: 15% auto;
+            position: relative;
+            padding: 20px;
+            border-radius: 500px;
+            background: linear-gradient(to right bottom,lightblue,transparent);
+            overflow: hidden;
+        }
+        .main .bx{
+            display: flex;
+            flex-direction: column;
+        }
+        .main .bx input{
+            padding: 5px;
+            border: none;
+            background-color: transparent;
+            font-size: 20px;
+            margin: 5px 0px;
+            color: rgba(0, 0, 0, 0.885);
+            text-transform: uppercase;
+        }
+        .main .bx input::placeholder{
+            letter-spacing: 3px;
+            text-align: center;
+        }
+        .main .bx input:focus{
+            outline: none;
+        }
+        .main .bx button{
+            padding: 5px;
+            text-transform: capitalize;
+            background: linear-gradient(to right bottom,transparent,#333);
+            border: 1px solid white;
+            color: white;
+            font-size: 25px;
+
+        }
+        .cl3{
+            position: absolute;
+            z-index: -1;
+            left: -70%;
+            top: 60%;
+            width: 1000px;
+            height: 1000px;
+            border-radius: 100%;
+            background: url(https://images.hdqwalls.com/wallpapers/dark-red-neon-5k-m3.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            transition: all 1s linear;
+        }
+        .main:hover .cl3{
+            top: 70%;
+        }
+        .main #tot{
+            color: white;
+            text-align: center;
+            margin: 10px 0px;
+            font-size: 22px;
+        }
+        .main #per{
+            color: white;
+            text-align: center;
+            margin: 5px 0px;
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>   
+    <div class="main">
+        <div class="cl1"></div>
+        <div class="cl2"></div>
+        <div class="cl3"></div>
+        <div class="bx">
+            <input type="text" id="sub1" placeholder="sub1">
+            <input type="text" id="sub2" placeholder="sub2">
+            <input type="text" id="sub3" placeholder="sub3">
+            <input type="text" id="sub4" placeholder="sub4">
+            <input type="text" id="sub5" placeholder="sub5">
+            <input type="text" id="sub6" placeholder="sub6">
+            <input type="text" id="sub7" placeholder="sub7">
+            <button onclick="check()">claculate</button>
+            <p id="tot"></p>
+            <p id="per"></p>
+        </div>
+    </div>
+    <script>
+        function check(){
+        var sub1 = Number(document.getElementById("sub1").value);                 
+        var sub2 = Number(document.getElementById("sub2").value);                 
+        var sub3 = Number(document.getElementById("sub3").value);                 
+        var sub4 = Number(document.getElementById("sub4").value);                 
+        var sub5 = Number(document.getElementById("sub5").value);                 
+        var sub6 = Number(document.getElementById("sub6").value);                 
+        var sub7 = Number(document.getElementById("sub7").value);                 
+        var total = sub1 + sub2 + sub3 + sub4 + sub5 + sub6 + sub7;
+        document.getElementById("tot").innerHTML = "TOTAL : " + total + " / 350";
+        var percent = (total/350)*100;         
+        document.getElementById("per").innerHTML = "percent : " + percent + "%";
+    }
+    </script>
+</body>
+</html>

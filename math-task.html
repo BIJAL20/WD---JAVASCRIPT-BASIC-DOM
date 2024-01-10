@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>math | js</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body{
+        /* background: url(https://images.hdqwalls.com/wallpapers/ubound-hole-abstract-5k-7o.jpg); */
+        background: url(https://images.hdqwalls.com/wallpapers/bipolar-core-z3.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .outer {
+        position: relative;
+        width: 45%;
+        margin: 20% auto;
+        padding: 20px;
+        border-radius: 10px;
+        backdrop-filter: blur(25px);
+        overflow: hidden;
+      }
+      .outer .bx{
+        width: 150px;
+        height: 150px;
+        background: linear-gradient(rgba(255, 255, 255, 0.356),rgba(135, 207, 235, 0.485),lightseagreen);
+        border-radius: 100%;
+        position: absolute;
+        left: -20%;
+        top: -20%;
+        z-index: -1;
+        transition: all .2s linear;
+      }
+      .outer .bx1{
+        width: 650px;
+        height: 650px;
+        background: linear-gradient(rgba(45, 43, 43, 0.356),rgba(135, 207, 235, 0.485),lightseagreen);
+        border-radius: 100%;
+        position: absolute;
+        left: 0%;
+        bottom: 0%;
+        top: 25%;
+        right: 0%;
+        margin: 0 auto;
+        z-index: -1;
+      }
+      .outer:hover .bx{
+        transform: scale(1.3);
+      }
+      .outer .inner {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .inner input {
+        padding: 8px;
+        margin: 5px 0px;
+        background: transparent;
+        border: 1px solid lightgray;
+
+      }
+        input:focus{
+        outline: none;
+      }
+      .inner input::placeholder {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 18px;
+        letter-spacing: 3px;
+        /* font-weight: 600; */
+        color:rgba(255, 255, 255, 0.58);
+        /* text-shadow: 2px 2px 1px gray; */
+      }
+      .inner .btn {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .inner .btn button {
+        width: 49%;
+        padding: 5px;
+        margin: 10px 0px;
+        background-color: transparent;
+        border: none;
+      }
+      .inner .btn button:nth-child(5) {
+        width: 100%;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+        <div class="bx"></div>
+        <div class="bx1"></div>
+      <div class="inner">
+        <input type="text" id="num1" placeholder="number" />
+        <input type="text" id="num2" placeholder="number" />
+        <div class="btn">
+          <button onclick="add()"><i class="fa-solid fa-plus"></i></button>
+          <button onclick="baad()"><i class="fa-solid fa-minus"></i></button>
+          <button onclick="guna()"><i class="fa-solid fa-xmark"></i></button>
+          <button onclick="bhaag()"><i class="fa-solid fa-divide"></i></button>
+          <button onclick="taka()"><i class="fa-solid fa-percent"></i></button>
+        </div>
+        <input type="text" id="ans" placeholder="jawab" />
+      </div>
+    </div>
+
+    <script>
+      function add() {
+        var number1 = Number(document.getElementById("num1").value);
+        var number2 = Number(document.getElementById("num2").value);
+        var result = number1 + number2;
+        document.getElementById("ans").value = result;
+      }
+
+      function baad() {
+        var number1 = Number(document.getElementById("num1").value);
+        var number2 = Number(document.getElementById("num2").value);
+        var result = number1 - number2;
+        document.getElementById("ans").value = result;
+      }
+
+      function guna() {
+        var number1 = Number(document.getElementById("num1").value);
+        var number2 = Number(document.getElementById("num2").value);
+        var result = number1 * number2;
+        document.getElementById("ans").value = result;
+      }
+
+      function bhaag() {
+        var number1 = Number(document.getElementById("num1").value);
+        var number2 = Number(document.getElementById("num2").value);
+        var result = number1 / number2;
+        document.getElementById("ans").value = result;
+      }
+
+
+      function taka() {
+        var number1 = Number(document.getElementById("num1").value);
+        var number2 = Number(document.getElementById("num2").value);
+        var result = number1 % number2;
+        document.getElementById("ans").value = result;
+      }
+
+
+    </script>
+  </body>
+</html>
